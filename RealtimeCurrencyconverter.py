@@ -38,11 +38,7 @@ while True:
         continue
     
 
-flo_val = float(value)
-pri_cur_val = data["quotes"]["USD"+pri_cur]
-pri2usd = flo_val/pri_cur_val
-sec_cur_val = data["quotes"]["USD"+sec_cur]
-answer = pri2usd*sec_cur_val
+answer = (float(value)/data["quotes"]["USD"+pri_cur])*data["quotes"]["USD"+sec_cur]
 
 print(f"{value} {pri_cur} converted to {sec_cur} = {answer} {sec_cur}")
 
