@@ -10,25 +10,20 @@ for i in currencycodes:
 
 open_url = urllib.request.urlopen(url)    
 source = open_url.read()
-
 data = json.loads(source)
-pydata = json.dumps(data, indent=4)
 
 print("Refer the list above for ISO-4217 code of all currencies.")
-
 while True:
     pri_cur= input('>>Please enter the ISO-4217 code of primary currency you want to convert: ').upper()
     if pri_cur in currencycodes.values(): break
     else:
         pri_cur= input('>>Please enter the ISO-4217 code of primary currency you want to convert: ').upper()
     
-
 while True:
     sec_cur = input('>>Please enter the ISO-4217 code of secondary currency you want to convert: ').upper()
     if sec_cur in currencycodes.values(): break    
     else:
       sec_cur = input('>>Please enter the ISO-4217 code of secondary currency you want to convert: ').upper()
-    
 
 while True:
     try:
@@ -37,9 +32,7 @@ while True:
     except:
         continue
     
-
 answer = (float(value)/data["quotes"]["USD"+pri_cur])*data["quotes"]["USD"+sec_cur]
-
 print(f"{value} {pri_cur} converted to {sec_cur} = {answer} {sec_cur}")
 
 
