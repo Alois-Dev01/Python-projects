@@ -17,17 +17,17 @@ pydata = json.dumps(data, indent=4)
 print("Refer the list above for ISO-4217 code of all currencies.")
 
 while True:
-    pri_cur= input('>>>Please enter the ISO-4217 code of primary currency you want to convert: ')
+    pri_cur= input('>>>Please enter the ISO-4217 code of primary currency you want to convert: ').upper()
     if pri_cur not in currencycodes.values():
-        pri_cur= input('>>>Please enter the ISO-4217 code of primary currency you want to convert: ')
+        pri_cur= input('>>>Please enter the ISO-4217 code of primary currency you want to convert: ').upper()
     else:
         break
 
 
 while True:
-    sec_cur = input('>>>Please enter the ISO-4217 code of secondary currency you want to convert: ')
+    sec_cur = input('>>>Please enter the ISO-4217 code of secondary currency you want to convert: ').upper()
     if sec_cur not in currencycodes.values():
-        sec_cur = input('>>>Please enter the ISO-4217 code of secondary currency you want to convert: ')
+        sec_cur = input('>>>Please enter the ISO-4217 code of secondary currency you want to convert: ').upper()
     else:
         break
 
