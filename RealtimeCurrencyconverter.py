@@ -32,7 +32,12 @@ while True:
         break
 
 
-value = input(f'>>>How much of {pri_cur} do you want to convert to {sec_cur}, please avoid "," or ".". Just enter numbers alone: ')
+while True:
+    try:
+        value = int(input(f'>>>How much of {pri_cur} do you want to convert to {sec_cur}, please avoid "," or ".". Just enter numbers alone: '))
+        break
+    except:
+        continue
     
 
 flo_val = float(value)
